@@ -120,7 +120,7 @@ class Model_setting extends CI_Model {
             $config['protocol'] = 'smtp';
             $config['smtp_host'] = 'smtp.qq.com';
             $config['smtp_user'] = 'chainwon@qq.com';
-            $config['smtp_pass'] = 'cmkoijnecijjbdbb';
+            $config['smtp_pass'] = 'dvfveszppmczbdhj';
             $config['smtp_port'] = '465';
             $config['smtp_crypto'] = 'ssl';
             $config['validate'] = true;
@@ -135,7 +135,8 @@ class Model_setting extends CI_Model {
             if ($this->email->send()) {
                 $a['notice']='已向你的邮箱 “'.$_POST['email'].'” 发送了一封邮件';
             } else {
-                $a['1']='failed';
+                $a['state']=0;
+                $a['notice']='邮箱发送失败！';
             }
 
             $mixcm->where('uid = ', $uid);

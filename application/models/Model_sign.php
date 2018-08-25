@@ -146,7 +146,7 @@ class Model_sign extends CI_Model {
             $config['protocol'] = 'smtp';
             $config['smtp_host'] = 'smtp.qq.com';
             $config['smtp_user'] = 'chainwon@qq.com';
-            $config['smtp_pass'] = 'cmkoijnecijjbdbb';
+            $config['smtp_pass'] = 'dvfveszppmczbdhj';
             $config['smtp_port'] = '465';
             $config['smtp_crypto'] = 'ssl';
             $config['validate'] = true;
@@ -158,13 +158,14 @@ class Model_sign extends CI_Model {
             $this->email->subject('验证你的 Mixcm Account 账号');
             $this->email->message('https://account.mixcm.com/email-verify?username='.$_POST['username'].'&token='.$token);
 
-            if ($this->email->send()) {
+            if($this->email->send()) {
                 $a['notice']='已向你的邮箱 “'.$_POST['email'].'” 发送了一封邮件';
                 $a['username'] = $_POST['username'];
                 $a['c'] = md5($_POST['username'].'mixcm520').md5($_POST['email'].'mixcm520');
                 $mixcm->insert('users', $_POST);
             } else {
-                $a['1']='failed';
+                $a['state'] = 0;
+                $a['notice']='注册失败，请检查你的邮箱！';
             }
         }
 
