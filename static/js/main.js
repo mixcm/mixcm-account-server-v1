@@ -78,18 +78,19 @@ $('button').click(function() {
                 message: data.notice,
                 position: 'right-bottom'
             });
-            $('button').prop("disabled",false);
-            $('button').html(html);
             if (data.state == 1) {
                 sso_mixcm('https://account.mixcm.com/ajax/sso', data.username, data.c);
                 sso_mixcm('https://www.chainwon.com/ajax/sso', data.username, data.c);
                 
-                    if (document.referrer != '') {
-                        window.location.href = document.referrer;
-                    }else{
-                        window.location.href = '/setting/home';
-                    }
+                if (document.referrer != '') {
+                    window.location.href = document.referrer;
+                }else{
+                    window.location.href = '/setting/home';
+                }
+
             }
+            $('button').prop("disabled",false);
+            $('button').html(html);
         }
     })
 });
