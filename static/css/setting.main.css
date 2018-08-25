@@ -1,0 +1,265 @@
+* {
+    text-shadow: 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f2f5fa;
+}
+
+.mixcm-container {
+    max-width: 880px;
+    margin: auto;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "AOS Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.mixcm-container::after {
+    display: table;
+    clear: both;
+    content: '';
+    height: 0;
+}
+
+.mixcm-item {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0.5em 3em rgba(161, 177, 204, 0.4);
+    box-shadow: 0 0.5em 3em rgba(161, 177, 204, 0.4);
+}
+
+#instantclick {
+    display: none;
+}
+
+#mixcm-header {
+    height: 300px;
+    position: relative;
+    background-color: rgb(101, 169, 251);
+}
+
+#mixcm-header .mixcm-nav {
+    overflow: unset;
+    height: 80px;
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    z-index: 1;
+}
+
+#mixcm-header .mixcm-nav a {
+    max-width: 80px;
+    margin: 0 10px;
+    height: 80px;
+    overflow: unset;
+    color: #fff!important;
+    text-align: center;
+    padding: 0;
+}
+
+#mixcm-header .mixcm-background {
+    background-size: cover;
+    height: 100%;
+}
+
+.mdui-bottom-nav:before {
+    content: ' ';
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.mdui-bottom-nav:after {
+    content: ' ';
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+#mixcm-header .mixcm-nav a i {
+    font-size: 40px;
+}
+
+#mixcm-content {
+    margin-top: -100px;
+}
+
+#mixcm-content > .mixcm-container > .mdui-spinner {
+    margin: 100px;
+}
+
+#mixcm-content .mixcm-user {
+    position: relative;
+    overflow: hidden;
+    padding: 15px;
+}
+
+#mixcm-content .mixcm-user .mixcm-background {
+    width: calc(100% + 70px);
+    height: calc(100% + 70px);
+    position: absolute;
+    margin: -50px;
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+    opacity: .7;
+    background-size: cover;
+    background-position: center;
+}
+
+#mixcm-content .mixcm-user .mixcm-avatar {
+    height: 60px;
+    width: 60px;
+    position: relative;
+}
+
+#mixcm-content .mixcm-user .mixcm-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    background: #fff;
+}
+
+#mixcm-content .mixcm-user .mixcm-info {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    height: 60px;
+    width: calc(100% - 90px);
+    color: #fff;
+}
+
+#mixcm-content .mixcm-user .mixcm-info * {
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#mixcm-content .mixcm-user .mixcm-info h1 {
+    top: 3px;
+    font-size: 1.2em;
+}
+
+#mixcm-content .mixcm-user .mixcm-info p {
+    bottom: 3px;
+}
+
+#mixcm-content .mixcm-setting h2 {
+    background-color: #f8f8f8;
+    margin: 20px -20px;
+    padding: 20px;
+    font-weight: normal;
+}
+
+#mixcm-content .mixcm-setting input,
+#mixcm-content .mixcm-setting textarea {
+    overflow: visible;
+    padding: 12px;
+    border-radius: 6px;
+    max-width: 100%;
+    min-width: 100%;
+    outline: none;
+    color: #5b6064;
+    font-size: 15px;
+    -webkit-transition: border-color .35s;
+    transition: border-color .35s;
+    -webkit-appearance: none;
+    border: 1px solid #cbd5dd;
+}
+
+#mixcm-content .mixcm-setting input:focus,
+#mixcm-content .mixcm-setting textarea:focus {
+    border-color: rgb(90, 95, 105);
+}
+
+#mixcm-content .mixcm-setting input[readonly] {
+    background-color: #f8f8f8;
+    border-color: #cbd5dd !important;
+}
+
+#mixcm-content .mixcm-setting input.no {
+    color: rgb(255, 75, 75);
+    border-color: rgb(255, 75, 75);
+}
+
+#mixcm-content .mixcm-setting i {
+    margin-top: -63px;
+    margin-left: calc(100% - 33px);
+}
+
+#mixcm-content i.yes {
+    color: rgb(83, 193, 141);
+}
+
+#mixcm-content i.no {
+    color: rgb(255, 75, 75);
+}
+
+#mixcm-content .mixcm-setting .mdui-select {
+    border-radius: 6px;
+    color: rgb(90, 95, 105);
+    text-align: center;
+    border: 1px solid #cbd5dd;
+    background-position: 79% center;
+    background-color: #fff;
+    background-image: url(https://i.loli.net/2018/02/20/5a8c15bee3195.png);
+    background-size: 15%;
+}
+
+#mixcm-content .mixcm-setting button {
+    background-color: rgb(0, 132, 255);
+    color: #fff;
+    border-radius: 20px;
+    height: 42px;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    padding: 0px 40px;
+}
+
+#mixcm-content .mixcm-setting button,
+#mixcm-content .mixcm-setting button:active,
+#mixcm-content .mixcm-setting button:focus,
+#mixcm-content .mixcm-setting button:hover {
+    color: #fff !important;
+    background-color: rgb(0, 132, 255) !important;
+}
+
+#mixcm-content .mixcm-setting button .mdui-spinner {
+    width: 22px;
+    height: 22px;
+    margin-bottom: -6px;
+}
+
+#mixcm-content .mixcm-setting button .mdui-spinner-layer {
+    border-color: #fff;
+}
+
+#mixcm-content .mixcm-setting a {
+    color: #F4696A;
+}
+
+#mixcm-content .notice {
+    text-align: center;
+    line-height: 260px;
+}
+
+#mixcm-footer .mixcm-copyright {
+    text-align: center;
+    margin: 25px;
+}
