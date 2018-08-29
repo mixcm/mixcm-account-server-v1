@@ -1,4 +1,5 @@
-    
+            </div>
+        </div><!-- .mixcm-container -->
     </div><!-- #mixcm-content -->
 
     <div id="mixcm-footer">

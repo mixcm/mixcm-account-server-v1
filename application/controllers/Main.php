@@ -19,6 +19,9 @@ class Main extends CI_Controller {
         }
         
         $data['page'] = $page;
+
+        $this->load->model('Model_setting');
+        $data['notice'] = $this->Model_setting->check_email();
         
         $this->load->view('pages/header', $data);
         $this->load->view('pages/'.$page, $data);
@@ -26,9 +29,10 @@ class Main extends CI_Controller {
     }
 
     public function setting($page='home'){
-        if($this->Model->get_mixcm_user()==''){  
+        /* if($this->Model->get_mixcm_user()==''){  
             echo '<script>window.location.href="'.base_url().'";</script>';
-        }
+        }*/
+        $this->load->model('Model_setting');
         
         if (!file_exists(APPPATH.'views/setting/'.$page.'.php')){
             show_404();
@@ -38,17 +42,6 @@ class Main extends CI_Controller {
         
         $this->load->view('setting/header', $data);
         $this->load->view('setting/'.$page, $data);
-        $this->load->view('setting/footer', $data);
-    }
-
-    public function check_email() {
-        $this->load->model('Model_setting');
-
-        $data['page'] = 'email-verify';
-        $data['notice'] = $this->Model_setting->check_email();
-
-        $this->load->view('setting/header', $data);
-        $this->load->view('setting/email-verify', $data);
         $this->load->view('setting/footer', $data);
     }
 

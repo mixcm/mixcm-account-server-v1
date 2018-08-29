@@ -3,10 +3,13 @@
             	<a href="https://account.mixcm.com/setting/home">
                     个人中心
                 </a>
-                <a href="JavaScript:alert('暂停注册');">
+                <a href="<?=site_url('signup');?>">
                     注册
                 </a>
+                <a href="<?=site_url('');?>">
+                    登录
+                </a>
                 <a href="https://mixcm.com">
-                    首页
+                    Mixcm
                 </a>
             </div>

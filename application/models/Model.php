@@ -8,6 +8,7 @@
 class Model extends CI_Model {
 
     public function __construct(){
+        $this->version = '18.8.25.2';
          
     }
     

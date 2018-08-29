@@ -117,12 +117,11 @@ class Model_sign extends CI_Model {
             'password' => '密码',
             'password2' => '确认密码',
             'name' => '笔名',
-            'qq' => 'QQ号码',
             'username' => '用户名',
             'email' => '邮箱地址',
         );
 
-        for ($x=0; $x<=5; $x++) {
+        for ($x=0; $x<5; $x++) {
             if($_POST[array_keys($data)[$x]]==''){
                 $a['state'] = 0;
                 $a['notice'] = $data[array_keys($data)[$x]].'不能为空！';
@@ -136,6 +135,10 @@ class Model_sign extends CI_Model {
                 'time' => time(),
                 'content' => $token,
             ));
+            $qq = str_replace('@qq.com','',$_POST['email']);
+            if(strstr($_POST['email'],"qq.com") && is_numeric($qq)){
+                $_POST['qq'] = $qq;
+            }
             $_POST['email_active'] = 0;
             $_POST['join_time'] = time();
             $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);

@@ -46,42 +46,49 @@ body {
 
 #mixcm-header .mixcm-nav {
     overflow: unset;
-    height: 80px;
     position: absolute;
     width: 100%;
-    top: 60px;
+    bottom: 100px;
     z-index: 1;
+    margin-left: 20px;
 }
 
 #mixcm-header .mixcm-nav a {
-    max-width: 80px;
-    margin: 0 10px;
-    height: 80px;
     overflow: unset;
     color: #fff!important;
     text-align: center;
-    padding: 0;
+    min-width: auto;
+}
+
+#mixcm-header .mdui-tab-indicator {
+    height: 0;
+    background-color: #0084ff;
+}
+
+#mixcm-header .mdui-tab-indicator::before {
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: #ffffff;
+    box-shadow: -2px -2px 3px -1px rgba(0, 0, 0, 0.1);
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: calc(50% - 8px);
+    width: 16px;
+    height: 16px;
 }
 
 #mixcm-header .mixcm-background {
+    background-image: url(https://i.loli.net/2018/04/01/5abfb3d0e4575.jpg);
     background-size: cover;
     height: 100%;
-}
-
-.mdui-bottom-nav:before {
-    content: ' ';
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-}
-
-.mdui-bottom-nav:after {
-    content: ' ';
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
 }
 
 #mixcm-header .mixcm-nav a i {
@@ -100,6 +107,7 @@ body {
     position: relative;
     overflow: hidden;
     padding: 15px;
+    z-index: 1;
 }
 
 #mixcm-content .mixcm-user .mixcm-background {

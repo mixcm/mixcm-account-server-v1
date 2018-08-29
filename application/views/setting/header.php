@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>个人中心 - Mixcm</title>
+    <title><?=$this->Model_setting->get_title($page); ?> - Mixcm Account</title>
     <meta name="description" content="">
     <meta name="keywords" content="Mixcm,自由之翼">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -15,19 +15,16 @@
 <body>
 
     <div id="mixcm-header">
-        <div class="mixcm-container">
-            <div class="mixcm-nav mdui-bottom-nav">
-                <a data-type="home" class="mdui-ripple mdui-ripple-white<?php if($page=='home'){echo' mdui-bottom-nav-active';}?>">
-                    <i class="mdui-icon material-icons">account_circle</i>
-                    <label>个人中心</label>
+        <div class="mixcm-container" style="height: 100%;"> 
+            <div class="mixcm-nav mdui-tab" mdui-tab>
+                <a href="#home" class="mdui-ripple mdui-ripple-white<?php if($page=='home'){echo' mdui-tab-active';}?>">
+                    个人信息
                 </a>
-                <a data-type="security" class="mdui-ripple mdui-ripple-white<?php if($page=='security'){echo' mdui-bottom-nav-active';}?>">
-                    <i class="mdui-icon material-icons">verified_user</i>
-                    <label>账号安全</label>
+                <a href="#security" class="mdui-ripple mdui-ripple-white<?php if($page=='security'){echo' mdui-tab-active';}?>">
+                    账号安全
                 </a>
-                <a data-type="record" class="mdui-ripple mdui-ripple-white<?php if($page=='record'){echo' mdui-bottom-nav-active';}?>">
-                    <i class="mdui-icon material-icons">assignment</i>
-                    <label>账号记录</label>
+                <a href="#record" class="mdui-ripple mdui-ripple-white<?php if($page=='record'){echo' mdui-tab-active';}?>">
+                    账号记录
                 </a>
             </div>
         </div>
@@ -35,3 +32,5 @@
     </div><!-- #mixcm-header -->
 
     <div id="mixcm-content">    
+        <div class="mixcm-container mixcm-item">
+            <div id="<?=$page?>">

@@ -5,6 +5,22 @@ class Model_setting extends CI_Model {
     public function __construct(){
         $this->load->database();
     }
+
+    public function get_title($page='home',$child='home'){
+        $a = array(
+            'home' => array(
+                'home' => '个人信息',
+            ),
+            'security' => array(
+                'home' => '账号安全',
+            ),
+            'record' => array(
+                'home' => '账号记录',
+            ),
+        );
+
+        return $a[$page][$child];
+    }
     
     public function save_home($uid){
 
